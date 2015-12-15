@@ -26,17 +26,50 @@
 		<link rel="icon" type="image/png" href="favicon.png">
 		<style type="text/css">
 		
-#nav ul li {
-	display: inline;
+nav.primary{
+display: table;
+margin: 0 auto;
+ }
+nav.primary ul,
+nav.primary ul li {
+margin: 0px;
 }
 
-#nav a {
-	text-decoration: none;
+nav.primary select {
+display: none;
+width:  100%;
+height: 28px;
+margin: 21px 0;
+
+
+}
+nav.primary ul li {
+display: inline;
+float: left;
+position: relative;
+
+
+}
+nav.primary ul li a {
+display: inline-block;
+line-height: 49px;
+padding:  0 14px;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: bold;
+letter-spacing: 0.08em;
+background: ##999999;
+
+
+}
+nav.primary ul li a:hover {
+background: #2ecc71;
+cursor: pointer;
+
+
 }
 
-#nav a:hover {
-	text-decoration: underline;
-}
 
 		
 		</style>
@@ -53,21 +86,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 		<!-- Primary Page Layout
 			–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container">
-	<div class="row">
-		<div class="two columns">
-			<h1>LOGO</h1>
-		</div>
-
-		<div  id="nav" class="ten columns">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact Us</a></li>
-			</ul>
-		</div>
-	</div>
+<!--Navigation-->
+<div class="band navigation">
+    <nav class="container primary">
+        <div class="sixteen columns">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
 </div>
+
 
 		<!-- End Document
 			–––––––––––––––––––––––––––––––––––––––––––––––––– -->
