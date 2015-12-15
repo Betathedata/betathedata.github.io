@@ -47,9 +47,25 @@
 			text-align:center;
 			}
 		
-#navigation li:hover .sub_navigation { 
-	display: block; 
+		nav.primary ul li a:hover {
+    background: #424242;
+    cursor: pointer;
 }
+nav.primary ul li:hover > a {
+    background: #424242;
+}
+
+nav.primary ul li a {
+    display: inline-block;
+    line-height: 49px;
+    padding: 0 14px;
+    color: #ebebeb;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
 nav.primary ul ul li a {
 white-space: nowrap;
 }
