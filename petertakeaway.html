@@ -29,9 +29,48 @@
 			background-color:#eeeeee;
 		}
 		
-ul, li {
-	display: inline;
-	float: left;
+nav.primary{
+display: table;
+margin: 0 auto;
+text-align:center;
+ }
+nav.primary ul,
+nav.primary ul li {
+margin: 0px;
+}
+
+nav.primary select {
+display: none;
+width:  100%;
+height: 28px;
+margin: 21px 0;
+
+
+}
+nav.primary ul li {
+display: inline;
+position: relative;
+float: left;
+
+}
+nav.primary ul li a {
+display: inline-block;
+line-height: 49px;
+padding:  0 14px;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: bold;
+letter-spacing: 0.08em;
+background: #fe99b9;
+
+
+}
+nav.primary ul li a:hover {
+background: #d07c97;
+cursor: pointer;
+
+
 }
 
 
@@ -52,16 +91,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <!--Navigation-->
 <div class="twelve columns" style="background-color:#fe99b9">
-	
+	<img src="http://i.imgur.com/JqRI2AR.png"></img>
 	<div class="container primary">
-		
+		<div class="band navigation">
+			<nav class="primary">
             				<ul>
-            					<li><img src="http://i.imgur.com/JqRI2AR.png"></img></li>
                 				<li><a href="#">Home</a></li>
                 				<li><a href="#">About Us</a></li>
                 				<li><a href="#">Menu</a></li>
                 				<li><a href="#">Contact Us</a></li>
             				</ul>
+    			</nav>
+		</div>
 	</div>
 </div>
 
@@ -96,4 +137,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	</body>
 </html>
+
 
