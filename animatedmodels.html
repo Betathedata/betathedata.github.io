@@ -8,9 +8,11 @@
         <meta name="keywords" content="minecraft,models,3d,animation,json,block models,animated models,3d models"/>
         <meta name="author" content="fzy_"/>
         
+        <meta name="description" content="Animated model generator for minecraft json models. Created by fizzy_ (http://www.minecraftforum.net/members/fizzy81)" />
+        
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <style type="text/css">
-            
+
 * {
     font-family: Roboto, 'Roboto', arial, sans-serif;
     color: black;
@@ -185,27 +187,25 @@ nav h3 {
     padding-left: 10px;
     margin: 0px;
     text-align: right;
-    width: 60px;
-}
-
-.icontrash {
-    height: 32px;
-    width: 32px;
-    cursor: pointer;
-    opacity: 0.6;
-    margin-left: 16px;
-    transition: all 0.2s cubic-bezier(.4,.9,.75,1);
-}
-
-.icontrash:hover {
-    opacity: 0.9;
-    transform: scale(1.1);
+    width: 70px;
 }
 
 .inputlabel {
-    width: 90px;
+    width: 100px;
     text-align: right;
     margin-right: 5px;
+}
+
+.inputfile {
+    width: 280px;
+    padding-right: 15px;
+    border-right: 2px #F5F5F5 solid;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .inputlabel label, .inputfile input, .inputdelay label, .inputdelay input {
@@ -215,14 +215,21 @@ nav h3 {
 
 .inputdelay {
     padding: 5px;
-    padding-left: 15px;
-    margin-left: 20px;
-    border-left: 2px #F5F5F5 solid;
+    padding-left: 25px;
 }
 
 @keyframes initAnim {
     from {transform: perspective(1200px) rotateX(60deg) translateY(-50px); opacity: 0; margin-bottom: 0;}
     to {transform: rotateX(0deg) translateY(0px); opacity: 1; margin-bottom: 25px;}
+}
+
+@keyframes textureinputAnim {
+    from {transform: perspective(1200px) rotateX(60deg) translateY(-15px); opacity: 0; margin-bottom: -7px;}
+    to {transform: rotateX(0deg) translateY(0px); opacity: 1; margin-bottom: 0px;}
+}
+
+.textureinput, .texturelabel {
+    animation: textureinputAnim 0.5s cubic-bezier(.4,.9,.75,1);
 }
 
 .frame, .deletedframe {
@@ -312,6 +319,12 @@ nav h3 {
     margin-left: 0px;
     margin-bottom: 8px;
     padding: 4px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .timeline_section {
@@ -379,6 +392,13 @@ nav h3 {
     right: 0px;
     top: 0px;
     width: 204px;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
     
 #output {
@@ -407,6 +427,12 @@ nav h3 {
     margin-bottom: 20px;
     font-size: 1.4em;
     text-decoration: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #lastTab a:hover {
@@ -442,6 +468,36 @@ nav h3 {
     transform: scale(0.6);
     opacity: 0.6;
 }
+
+.overwritten {
+    display: none;
+}
+
+#resetEverything {
+    position: absolute;
+    display: inline-block; margin: 0; padding: 0; text-decoration: none;
+    width: 70px;
+    height: 70px;
+    background: url("data:image/png;base64,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") scroll no-repeat center;
+    transform: scale(0.4);
+    opacity: 0.6;
+    right: 8px;
+    top: -16px;
+    transition: all 0.2s cubic-bezier(.4,.9,.75,1);
+}
+
+#resetEverything:hover {
+    opacity: 0.8;
+}
+
+button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
         </style>
         <link rel="icon" type="image/png" href="data:image/png;base64,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" />
         
@@ -449,6 +505,7 @@ nav h3 {
         
     </head>
     <body>
+        <h1 style="text-align:center">This tool was created by Fizzy81, <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2478389-block-models-animated-minecraft-model-generator">click here for a downloadable version</a></h1>
         <div id="wrapper">
             <header>
                 <nav>
@@ -462,14 +519,16 @@ nav h3 {
                         </li>
                     </ul>
                 </nav>
-                <h1 style="font-weight: bold;">Minecraft animated model generator</h1>
-                <h2>Combine several frames into a single animated model</h2>
+                <a style="display: block; margin: 0; padding: 0; text-decoration: none" href="">
+                    <h1 style="font-weight: bold">Minecraft animated model generator - V1.2.0</h1>
+                    <h2>Combine several frames into a single animated model</h2>
+                </a>
             </header>
             <section id="main_block">
                 <div id="inputs">
                     <h3 style="margin: 0; margin-top: 10px; font-weight: bold; font-size: 1.3em;">Load frames</h3>
                     <h3 id="framesCount" style="margin-bottom: 0px; margin-left: 40px; font-size: 1.1em; display: inline-block;">Loaded : 0</h3>
-                    <button onclick="newframe()" style="display: block; margin-left: 560px; cursor: pointer;">New frame</button>
+                    <button onclick="newframe()" style="display: block; margin-left: 560px; cursor: pointer;" id="newframe">New frame</button>
                     <section id="frames">
                         
                     </section>
@@ -496,7 +555,7 @@ nav h3 {
                                     <div id="delete" onclick="del()" title="delete this frame"></div>
                                 </div>
                                 <div id="frame_options" style="padding: 20px;">
-                                    <label>Duration : <div id="remove1" title="-1"></div><div id="framedurationinthetimeline" style="display: inline-block; padding: 5px; text-align: center;"></div><div id="add1" title="+1"></div></label>
+                                    <label style="-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">Duration : <div id="remove1" title="-1"></div><div id="framedurationinthetimeline" style="display: inline-block; padding: 5px; text-align: center;"></div><div id="add1" title="+1"></div></label>
                                     <div id="framefiles" style="margin-top: 25px; background-color: white; box-shadow: 0px 4px 10px -3px rgba(0,0,0,0.4); height: 128px; border: 1.5px #E0E0E0 solid; overflow: hidden;">
                                         <img id="frametextureinthetimeline" src="" alt="frametexture" style="height: 128px; width: 128px; vertical-align: top; border-width: 0px;" class="pixelated"/>
                                         <pre id="framejsoninthetimeline" style="font-size: 0.8em; display: inline-block; height: 128px; width: 245px; overflow: hidden; margin: 0px;"></pre>
@@ -543,23 +602,27 @@ nav h3 {
                         </div>
                     </div>
                     <div id="problem" style="display: none">
-                        <p><br/>If you encounter any bug, please let me know <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2478389-block-models-animated-minecraft-model-generator" target="_blank">here</a>, thank you =)<br/><br/>Note: If you're using Internet Explorer, the download buttons might not work. You'll have to copy and paste the text from the preview boxes and download the texture with right click > save image as.</p>
+                        <p><br/>If you encounter any bug, please let me know <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2478389-block-models-animated-minecraft-model-generator" target="_blank">here</a>, thank you :D<br/><br/>Note: If the download buttons don't work, simply copy and paste the text from the preview boxes and download the texture with right click > save image as. Make sure to name the json model "<span id="jsonmodelnameend"></span>", the texture "<span id="texturenameend"></span>" and the .mcmeta file "<span id="mcmetanameend"></span>".</p>
                     </div>
                     <div id="generatecover"></div>
                 </div>
             </section>
-            <footer>Need help? Click <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2478389-block-models-animated-minecraft-model-generator" target="_blank">here</a>!</footer>
+            <footer>
+                <span>
+                    Need help? Click <a href="http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/2478389-block-models-animated-minecraft-model-generator" target="_blank">here</a>!
+                </span>
+                <a title="reset" href="" id="resetEverything"></a>
+            </footer>
             <div id="cacheleft"></div>
             <div id="cacheright"></div>
         </div>
         <script type="text/javascript">
-            
+
 var warning = document.getElementById('warning');
 var parentwarning = warning.parentNode;
 parentwarning.removeChild(warning);
 
 iconDelete = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAAsVJREFUWEfV2Mtq1UAAxvHWy0J3orjw9hYt+iCi4tHXaPUBvG0VEdSdNyi4EcHnKL6AohtbdWtF0O8fMmGSfJlMTnICFn7QTObykZzMTLK2WCyWcUguyW15Kx/lu/wu8T9lnLslF4U2rq8kW5hwQR7IV/k70Be5J+fF9W3ZQuO0PBWujht8iAN5IqfEjVVjCxtuyA9xg43Bz+CauDErtrB0VJ6L63xKXM0j4jJ0BjwuH8R1uArvhTFbWVoFwpWbM1xAyNaVrB2UnonrYA7c7lqe2oHwQLiGc7oqVaY4HFPJT3GN5rQvJ6UVkHnONYj9kevyJirL9UK4Q/ThzsceSy0gK0TfJEzHV4T6h+W1uHoO4WhDW+a+vpBM5melCsjy5SrGuHKhPnJDxuEC/lzd2F0pArKI56ythGkOxPErcfXhwnGc8xP5LOs0YFfiKjhDQo4JF2zSiC2TO9mFMG7glxLqTBEO2zRkz+ZOpqRCThUOOzRmY+lO9iGMCzJVOOzSAdsedzKHCxkbEw57dDJ2E+pu6RThcPBfBBxzi7vCBZwbsuI0Fbd42Yek62l1ZcuGLB6SZaaZ1FSyzIrTpZhmeG91J7ukwoU6U4XcoiEv1e6kkxMuyFlx+mzQiM0CL9WuQmxIuGBMyE9SbBZwvyxMYbPZHChnGnGT+U1xdWN3pNoP8jkiZ8MaXrRzwwVxSPaVfRvWX3JGalt+3qhc5Rgdj9nyc+X6wuGhFLnigHwrGTNpT+WbnJBWQHALXaM5XZYqUxwuyLnVq/JIanlqByU+P/AZwnWwSu+k+bTbgOBDzpwhCXdMWllaBRGu5By3m9vaunKBLWzgweFzhOt8DJ7W2gPh2EKDbyV8juCN3w02BJMw81w1laTYwoRzwhs/L9Vu8BTWVpavYoXIZQszsMHYlG3ZkV3ZE64w+J8yzm3JhqyL6ythsfYPGpnt5BnLgOMAAAAASUVORK5CYII=";
-iconEnable = "data:image/png;base64,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";
 iconUp = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAEASURBVGhD1c9BDoJAEAVRb6XehXMYN0aPrF5Ah4ROCClgBppFLd6mmJD+p67r1DCaYDTBaILRBKMJRhOMJhhNMJpgNMFogtEEowlGE4wmGBO9BvQtBcYk/eG/wWEjMCYYH3/oCIw70fEhfQTGHZaOD6kjMG5Ex7+Lz6T10kZg3GDu+PPgsBEYGy0dH28OG4GxQc3x4VKkj8BYqeX4kD4CY4Utx4fUERhX7Dk+XIuUERhXTAe0Hh/6Ed9i/K9nQW9nYawQI7YeH8YjHkNrgrHSvdhzfOhH3CatGkYTjCYYTTCaYDTBaILRBKMJRhOMJhhNMJpgNMFogtEEowlGj+70BxvSLAFRSs9MAAAAAElFTkSuQmCC";
 iconDown = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAEmSURBVGhD1c+9bQJBFEVhQjrAtGMRWNDCFgmZKzGUYiLzrsQko7Oen50JbvBJ6AC79+2WZbGG0QlGJxidYHSC0QlGJxidYHSC0QlGJxidYHSC0QlGJxidYKx0Coes9TiGz6xVw1jhEp7hJ2w5QuMf4Td8vVsTjAXnoPF/b71HpPHpOV1HYCy4hfTSpPUIjb+H/DnXQL9fhbFgH75D/vLaIz4Cjdcz9Wz6zyqMFXqPGDpeMFZqPWL4eMHYoPaIKeMFY6PSERqvz/n3m8cLxg7/HTFtvGDstHZEbth4wbhB6Yih4wXjRmtHDB8vGAfIj5gyXjAOko6YNl4wDqTh08YLRicYnWB0gtEJRicYnWB0gtEJRicYnWB0gtEJRicYnWB0gtHHsnsBPtUshfuiTHIAAAAASUVORK5CYII=";
 iconDuplicate = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAGbSURBVGhD7ZlBagMxEAT9GpNH7R+d+GEhJLknM3sKoky3TUuwxIe6VDPTkm1Y8J62bTs0KI8EyuKleC0+i5/JUL8NyT78R0FlM6Az2JDsT56KZkFnsCG54mfzFzqDDclowWxIPi+wEpL/4gIrnhPfxbXoLjrDDslx0Zivfk50181LkBwXjPnq50TzVozn2CE5Do/56udE81WM59ghOQ7fm6ewekiqQZWnsHpIqkGVp7B6SKpBlaewekiqQZWnsHpIqkGVp7B6SKpBlaewekiqQZWnsHpIqkGVp7B6SKpBlaewekiqQZWnsHpIqkGVp7B6SKpBlaewekiqQZWnsHpIqkGVp7B6SKpBlaewekiqQZWnsHpIqkGVp7B6SKpBlaewekiqQZWnsHpQCqzFAawelAJrcQCrB6XAWhzA6kEpsBYHsHpQCqzFAawelAJrcQCrB6XAWhzA6kEpsBYHsHpQCvp/+3H5bO76c1fRLx2oZCaXgs7y0AVWv+B4L84FneWhCzR9iX7p0F8tlSbo3f3J3zx8g/JIoDwO2+kX1QdQx73hNkkAAAAASUVORK5CYII=";
@@ -577,36 +640,48 @@ function generate() {
     var framesList = [];
     var idfix = 0;
     
-    for (var i = 0; i < frames.length; i++ ) {
-        
-        var framenode = frames[i];
-        var frameid = i - idfix;
-        var frameinputid = parseInt(framenode.id.substring(5)) -1;
-        var file = document.querySelector('#' + framenode.id + ' .model');
-        file = file.files[0];
-        
-        if (file != undefined) {
-            var framename = file.name.split('.json')[0];
-        } else {
-            var framename = '';
-        }
-        
-        var frame = {};
-        frame['id'] = frameid;
-        frame['name'] = framename;
-        frame['inputid'] = frameinputid; //option
-        
-        frame['model'] = inputList[frameinputid]['model'];
-        frame['texture'] = inputList[frameinputid]['texture'];
-        frame['delay'] = inputList[frameinputid]['delay'];
-        
-        if (frame['name'] != '' && frame['model'] != '' && frame['texture'] != '') {
-            framesList.push(frame);
-        } else {
-            idfix += 1;
+    var load = true
+    for (var i = 0; i < inputList.length; i++) {
+        if (globalmodel['frame' + (i+1)] == "" || Object.keys(frameTextures['frame' + (i+1)]).length == 0) {
+            load = false;
         }
     }
-    return framesList;
+    
+    if (load) {
+        for (var i = 0; i < frames.length; i++ ) {
+            
+            var framenode = frames[i];
+            var frameid = i - idfix;
+            var frameinputid = parseInt(framenode.id.substring(5)) -1;
+            var file = document.querySelector('#' + framenode.id + ' .model');
+            file = file.files[0];
+            
+            if (file != undefined) {
+                var framename = file.name.split('.json')[0];
+            } else {
+                var framename = '';
+            }
+            
+            var frame = {};
+            frame['id'] = frameid;
+            frame['name'] = framename;
+            frame['inputid'] = frameinputid; //option
+            
+            frame['model'] = inputList[frameinputid]['model'];
+            frame['texture'] = inputList[frameinputid]['texture'];
+            frame['delay'] = globaldelay[frameinputid];
+            
+            if (frame['name'] != '' && frame['model'] != '' && frame['texture'] != '') {
+                framesList.push(frame);
+            } else {
+                idfix += 1;
+            }
+        }
+        return framesList;
+    } else {
+        return [];
+    }
+    
 }
 
 framesCount = 0;
@@ -632,12 +707,16 @@ function newframe() {
     labels.className = 'inputlabel';
     var label1 =document.createElement('label');
     label1.appendChild(document.createTextNode('JSON file :'));
+    label1.setAttribute('style', 'display: inline-block; padding: 5px; height: 21px;');
     labels.appendChild(label1);
     labels.appendChild(document.createElement('br'));
     var label2 = document.createElement('label');
-    label2.appendChild(document.createTextNode('Texture :'));
+    label2.appendChild(document.createTextNode('Textures :'));
+    label2.setAttribute('style', 'display: inline-block; padding: 5px; height: 21px;');
     labels.appendChild(label2);
     frame.appendChild(labels);
+    
+//inputs --------------------------------------------------//
     
     var inputfiles = document.createElement('div');
     inputfiles.className = 'inputfile';
@@ -645,18 +724,45 @@ function newframe() {
     model.setAttribute('type', 'file');
     model.setAttribute('name', 'model');
     model.setAttribute('accept', '.json');
+    model.setAttribute('style', 'display: inline-block; padding: 5px; height: 21px;');
     model.setAttribute('onchange', "loadmodel('" + frame.id + "')");
     model.className = 'model';
     inputfiles.appendChild(model);
+    
     inputfiles.appendChild(document.createElement('br'));
-    var texture = document.createElement('input');
-    texture.setAttribute('type', 'file');
-    texture.setAttribute('name', 'texture');
-    texture.setAttribute('accept', '.png');
-    texture.setAttribute('onchange', "loadtexture('" + frame.id + "')");
-    texture.className = 'texture';
-    inputfiles.appendChild(texture);
+    
+    var textureoptions = document.createElement('span');
+    var addtexture = document.createElement('button');
+    var removetexture = document.createElement('button');
+    var copytexture = document.createElement('button');
+    
+    addtexture.appendChild(document.createTextNode('Add'));
+    removetexture.appendChild(document.createTextNode('Remove last'));
+    copytexture.appendChild(document.createTextNode('Copy to all'));
+    addtexture.setAttribute('style', 'cursor: pointer;');
+    removetexture.setAttribute('style', 'margin-left: 9px; cursor: pointer;');
+    copytexture.setAttribute('style', 'margin-left: 9px; cursor: pointer;');
+    
+    addtexture.setAttribute('onclick', "addtextureinput('" + frame.id + "')");
+    removetexture.setAttribute('onclick', "removetextureinput('" + frame.id + "')");
+    copytexture.setAttribute('onclick', "copytexturestoall('" + frame.id + "')");
+    
+    copytexture.id = 'copy' + frame.id;
+    copytexture.className = 'copytexture';
+    
+    textureoptions.appendChild(addtexture);
+    textureoptions.appendChild(removetexture);
+    textureoptions.appendChild(copytexture);
+    
+    frameTextures[frame.id] = {};
+    
+    textureoptions.setAttribute('style', 'display: inline-block; padding: 5px; height: 21px;');
+    
+    inputfiles.appendChild(textureoptions);
+    
     frame.appendChild(inputfiles);
+    
+//end --------------------------------------------------//
     
     var framedelay = document.createElement('div');
     framedelay.className = 'inputdelay';
@@ -675,21 +781,156 @@ function newframe() {
     framedelay.appendChild(labeldelay);
     frame.appendChild(framedelay);
     
-    var delicon = document.createElement('img');
-    delicon.className = 'icontrash';
-    delicon.setAttribute('src', iconDelete);
-    delicon.setAttribute('title', 'disable frame');
-    delicon.setAttribute('onclick', "deleteframe('" + frame.id + "')")
-    frame.appendChild(delicon);
-    
     document.getElementById('frames').appendChild(frame);
     
     inputList.push({'model': '', 'texture': '', 'delay': 1});
+    
+    globaltextures[frame.id] = 0;
+    var slot = parseInt(frame.id.substring(5)) - 1;
+    globaldelay[slot] = 1;
+}
+
+function addtextureinput(fid) {
+    
+    globaltextures[fid] += 1;
+    
+    var inputfiles = document.querySelector('#' + fid + ' .inputfile');
+    var texture = document.createElement('input');
+    texture.setAttribute('type', 'file');
+    texture.setAttribute('name', 'texture');
+    texture.setAttribute('accept', '.png');
+    texture.setAttribute('style', 'display: inline-block; padding: 5px; height: 21px;');
+    texture.setAttribute('onchange', "loadtexture('" + fid + "','f" + fid + "t" + globaltextures[fid] + "')");
+    texture.id = "f" + fid + "t" + globaltextures[fid];
+    texture.className = 'textureinput';
+    inputfiles.appendChild(document.createElement('br'));
+    inputfiles.appendChild(texture);
+    
+    var labels = document.querySelector('#' + fid + ' .inputlabel');
+    labels.appendChild(document.createElement('br'));
+    var label = document.createElement('label');
+    label.appendChild(document.createTextNode( globaltextures[fid] + '.'));
+    label.setAttribute('style', 'display: inline-block; padding: 5px; height: 21px;');
+    label.className = "texturelabel"
+    labels.appendChild(label);
+}
+
+function removetextureinput(fid) {
+    var inputfiles = document.querySelector('#' + fid + ' .inputfile');
+    var labels = document.querySelector('#' + fid + ' .inputlabel');
+    
+    var label = labels.lastChild;
+    var input = inputfiles.lastChild;
+    
+    if (label.className == 'texturelabel' && input.className == 'textureinput') {
+        
+        var file = input.files[0];
+        if (file != undefined) {
+            delete frameTextures[fid][file.name.split('.png')[0]];
+        }
+        
+        inputfiles.removeChild(input);
+        inputfiles.removeChild(inputfiles.lastChild);
+        labels.removeChild(label);
+        labels.removeChild(labels.lastChild);
+        globaltextures[fid] -= 1;
+    }
+    
+    if (texturelink) {
+        var copythis = frameTextures[fid];
+        for (var name in frameTextures) {
+            frameTextures[name] = copythis;
+        }
+    }
+}
+
+function copytexturestoall(fid) {
+    var buttons = document.querySelectorAll('.copytexture');
+    for (var i = 0; i < buttons.length; i++) {
+        var b = buttons[i];
+        if (b.id != 'copy' + fid) {
+            b.className += ' overwritten';
+            var parent = b.parentNode;
+            parent.childNodes[0].className += ' overwritten';
+            parent.childNodes[1].className += ' overwritten';
+            var msg = document.createElement('span');
+            msg.appendChild(document.createTextNode(' Linked to frame ' + fid.split('frame').join("")));
+            msg.setAttribute('style','font-size: 13.3333px;');
+            parent.appendChild(msg);
+        }
+    }
+    
+    var frames = document.querySelectorAll('.frame');
+    for (var i = 0; i < frames.length; i++) {
+        var frame = frames[i];
+        if (frame.id != fid) {
+            
+            var inputs = document.querySelectorAll('#' + frame.id + ' .textureinput');
+            for (var j = 0; j < inputs.length; j++) {
+                removetextureinput(frame.id);
+            }
+            
+        }
+    }
+    
+    var button = document.getElementById('copy' + fid);
+    button.innerHTML = 'Cancel';
+    button.setAttribute('onclick','undotexturetoall("' + fid + '");');
+    
+    var newframe = document.getElementById('newframe');
+    newframe.setAttribute('onclick','undotexturetoall("' + fid + '"); newframe()');
+    
+    var copythis = frameTextures[fid];
+    for (var name in frameTextures) {
+        frameTextures[name] = copythis;
+    }
+    
+    texturelink = true;
+    
+    console.log(frameTextures);
+}
+
+function undotexturetoall(fid) {
+    
+    var buttons = document.querySelectorAll('.copytexture');
+    for (var i = 0; i < buttons.length; i++) {
+        var b = buttons[i];
+        if (b.id != 'copy' + fid) {
+            b.className = b.className.split(' overwritten').join("");
+            var parent = b.parentNode;
+            parent.childNodes[0].className = parent.childNodes[0].className.split(' overwritten').join("");
+            parent.childNodes[1].className = parent.childNodes[1].className.split(' overwritten').join("");
+            parent.removeChild(parent.lastChild);
+        }
+    }
+    
+    var button = document.getElementById('copy' + fid);
+    button.innerHTML = 'Copy to all';
+    button.setAttribute('onclick','copytexturestoall("'+fid+'");');
+    
+    var newframe = document.getElementById('newframe');
+    newframe.setAttribute('onclick','newframe()');
+    
+    for (var name in frameTextures) {
+        if (name != fid) {
+            frameTextures[name] = {};
+        }
+    }
+    
+    texturelink = false;
 }
 
 inputList = [];
+globaltextures = {};
+frameTextures = {};
+
+texturelink = false;
 
 //load the different inputs
+
+globalmodel = {}
+
+globaldelay = {}
 
 function loaddelay(fid) {
     
@@ -698,7 +939,7 @@ function loaddelay(fid) {
     var slot = parseInt(frame.id.substring(5)) - 1;
     var delay = input.value;
     
-    inputList[slot]['delay'] = parseInt(delay);
+    globaldelay[slot] = parseInt(delay);
 }
 
 function loadmodel(fid) {
@@ -706,68 +947,154 @@ function loadmodel(fid) {
     var frame = document.getElementById(fid)
     var input = document.querySelector('#' + fid + ' .model');
     var file = input.files[0];
-    var slot = parseInt(frame.id.substring(5)) - 1;
     
-    var reader = new FileReader();
-    reader.addEventListener('load', function() {
+    if (file != undefined) {
+    
+        var reader = new FileReader();
+        reader.addEventListener('load', function() {
+            
+            var model = reader.result;
+            globalmodel[fid] = model;
+            
+        }, false);
         
-        var model = reader.result;
-        inputList[slot]['model'] = model;
+        reader.readAsText(file);
         
-    }, false);
-    reader.readAsText(file);
+    } else {
+        globalmodel[fid] = "";
+    }
 }
 
-function loadtexture(fid) {
+function loadtexture(fid,tid) {
     
-    var frame = document.getElementById(fid)
-    var input = document.querySelector('#' + fid + ' .texture');
+    var input = document.getElementById(tid);
     var file = input.files[0];
-    var slot = parseInt(frame.id.substring(5)) - 1;
     
-    var reader = new FileReader();
-    reader.addEventListener('load', function() {
+    if (file != undefined) {
+    
+        var name = file.name
         
-        var texture = reader.result;
-        inputList[slot]['texture'] = texture;
-        
-    }, false);
-    reader.readAsDataURL(file);
-}
-
-//frame disable-enable
-
-function deleteframe(frame) {
-    var supr = document.getElementById(frame);
-    var img = document.querySelector('#' + frame + ' .icontrash')
-    var cache = document.createElement('div');
-    cache.className = 'deletecache';
-    supr.appendChild(cache);
-    supr.className = 'deletedframe';
-    img.setAttribute('onclick', "reloadframe('" + frame + "')");
-    img.setAttribute('src', iconEnable);
-    img.setAttribute('title', 'enable frame');
-    framesDisplay -= 1;
-    document.getElementById('framesCount').innerHTML = 'Loaded : ' + framesDisplay;
-    document.getElementById('framesCount2').innerHTML = 'Loaded : ' + framesDisplay;
-}
-
-function reloadframe(frame) {
-    var supr = document.getElementById(frame);
-    var img = document.querySelector('#' + frame + ' .icontrash')
-    supr.className = 'frame';
-    img.setAttribute('onclick', "deleteframe('" + frame + "')");
-    img.setAttribute('src', iconDelete);
-    img.setAttribute('title', 'disable frame');
-    framesDisplay += 1;
-    document.getElementById('framesCount').innerHTML = 'Loaded : ' + framesDisplay;
-    document.getElementById('framesCount2').innerHTML = 'Loaded : ' + framesDisplay;
-    supr.removeChild(supr.lastChild);
+        var reader = new FileReader();
+        reader.addEventListener('load', function() {
+            
+            var texture = reader.result;
+            frameTextures[fid][file.name.split('.png')[0]] = texture;
+            
+            if (texturelink) {
+                var copythis = frameTextures[fid];
+                for (var name in frameTextures) {
+                    frameTextures[name] = copythis;
+                }
+            }
+            
+        }, false);
+        reader.readAsDataURL(file);
+    }
 }
 
 newframe();
 FL = [];
 activeFrame = 0;
+
+function mergeTextures() {
+    
+    var load = true
+    for (var i = 0; i < inputList.length; i++) {
+        if (globalmodel['frame' + (i+1)] == "" || Object.keys(frameTextures['frame' + (i+1)]).length == 0) {
+            load = false;
+        }
+    }
+    
+    if (load && inputList.length > 0) {
+    
+        for (var i = 0; i < inputList.length; i++) {
+            
+            var frame = inputList[i];
+            var model = JSON.parse(globalmodel['frame'+(i+1)]);
+            var textures = frameTextures['frame'+(i+1)];
+        
+            var base_width = 16;
+            var base_height = 16;
+            
+            var size = 16;
+            
+            var num = Object.keys(textures).length;
+            
+            for (var name in textures) {
+                var texture = textures[name];
+                var texturebuffer = new Image();
+                texturebuffer.src = texture;
+                if (texturebuffer.width > base_width) { base_width = texturebuffer.width;}
+                if (texturebuffer.height > base_height) { base_height = texturebuffer.height;}
+            }
+            
+            var pixels = base_height * base_width * num;
+            while (size*size < pixels) {size *= 2;}
+            
+            var canvas = document.createElement('canvas');
+            canvas.setAttribute('width', size);
+            canvas.setAttribute('height', size);
+            var ctx = canvas.getContext('2d');
+            
+            var x = 0;
+            var y = 0;
+            
+            var texture_summary = {};
+            
+            for (var name in textures) {
+                var texture = new Image();
+                texture.setAttribute('src',textures[name]);
+                ctx.drawImage(texture,x,y);
+                texture_summary[name] = [x,y,texture.width,texture.height];
+                x += base_width;
+                if (x+base_width>size) {
+                    x = 0;
+                    y += base_height;
+                }
+            }
+            
+            for (var e = 0; e < model['elements'].length; e++) {
+                for (var face in model['elements'][e]['faces']) {
+                    
+                    var name = model['elements'][e]['faces'][face]['texture'];
+                    if (name.charAt(0) == '#') {
+                        name = model['textures'][name.split('#').slice(-1)];
+                        name = name.split('/').slice(-1);
+                    } else {
+                        name = name.split('#').slice(-1).split('/').slice(-1);
+                    }
+                    
+                    if (name in texture_summary) {
+                        
+                        var minx = model['elements'][e]['faces'][face]['uv'][0];
+                        var miny = model['elements'][e]['faces'][face]['uv'][1];
+                        
+                        var maxx = model['elements'][e]['faces'][face]['uv'][2];
+                        var maxy = model['elements'][e]['faces'][face]['uv'][3];
+                        
+                        var x = texture_summary[name][0];
+                        var y = texture_summary[name][1];
+                        
+                        var width = texture_summary[name][2];
+                        var height = texture_summary[name][3];
+                        
+                        model['elements'][e]['faces'][face]['uv'][0] = (minx * (width/base_width) * (base_width/16) + x) / size * 16;
+                        model['elements'][e]['faces'][face]['uv'][1] = (miny * (height/base_height) * (base_height/16) + y) / size * 16;
+                        
+                        model['elements'][e]['faces'][face]['uv'][2] = (maxx * (width/base_width) * (base_width/16) + x) / size * 16;
+                        model['elements'][e]['faces'][face]['uv'][3] = (maxy * (height/base_height) * (base_height/16) + y) / size * 16;
+                    }
+                }
+            }
+        
+            inputList[i]['texture'] = canvas.toDataURL('image/png');
+            inputList[i]['model'] = JSON.stringify(model, cleanJson, 4).replace(/\\"/g, '"').replace(/,/g, ', ').replace(/\}clean"/g, ' }').replace(/"clean\{/g, '{ ').replace(/\]clean"/g, ' ]').replace(/"clean\[/g, '[ ').replace(/"\:"/g, '": "').replace(/"\:\[/g, '": [').replace(/"east":/g,'"east": ').replace(/"west":/g,'"west": ').replace(/"down":/g,'"down": ').replace(/"up":/g,'"up":   ').replace(/"to":/g,'"to":  ').replace(/"rotation":/g,'"rotation": ');
+        
+        }
+        
+    }
+    
+}
 
 /*------------------------------------*\
     timeline tab functions
@@ -780,12 +1107,22 @@ function loadTimeline(framesList) {
     var timeline = document.getElementById('timeline');
     while (timeline.firstChild) timeline.removeChild(timeline.firstChild);
     FL = framesList;
-        
-    if (framesList[0] != undefined) {
+    
+    var load = true;
+    if (framesList[0] == undefined) {
+        load = false
+    }
+    for ( var i = 0; i < framesList.length; i++) {
+        if (framesList[i] == undefined) {
+            load = false
+        }
+    }
+    
+    animDuration = 0;
+    
+    if (load) {
         
         texture_dimensions = [];
-        
-        var animDuration = 0;
         
         for (var i = 0; i < framesList.length; i++ ) {
             
@@ -852,7 +1189,7 @@ function loadTimeline(framesList) {
         frame.className = 'timeline_section';
         frame.setAttribute('style', 'height: 42px;');
         var name = document.createElement('span');
-        name.appendChild(document.createTextNode('No frame loaded'));
+        name.appendChild(document.createTextNode("Invalid frame list"));
         frame.appendChild(name);
         timeline.appendChild(frame);
         
@@ -920,6 +1257,7 @@ function updateAnimDuration() {
     }
     
     document.getElementById('time-display').innerHTML = 'Animation duration : ' + duration;
+    animDuration = duration;
 }
 
 function updateTotalLoaded() {
@@ -1012,6 +1350,7 @@ function del(frame) {
         timeline.appendChild(noframe);
         
         document.getElementById('right-wrapper').setAttribute('style', 'display: none;');
+        animDuration = 0;
     }
 }
 
@@ -1066,20 +1405,20 @@ function createfiles() {
             frameTexture.setAttribute('src',FL[i]['texture']);
             ctx.drawImage(frameTexture,width,height + texture_size * i);
             
-            for (var j = 0; j < frameElements.length; j++ ) { //modifications to each element
+            for (var j = 0; j < frameElements.length; j++ ) {
                 
                 var element = frameElements[j];
                 var faces = element['faces'];
                 
                 for (key in faces) {
                     var face = faces[key];
-                    face['uv'][0] = (face['uv'][0] + width)/(texture_size/16);
-                    face['uv'][2] = (face['uv'][2] + width)/(texture_size/16);
+                    face['uv'][0] = (face['uv'][0] * (frameTexture.width/16) + width) / (texture_size/16);
+                    face['uv'][2] = (face['uv'][2] * (frameTexture.width/16) + width) / (texture_size/16);
                     
-                    face['uv'][1] = (face['uv'][1] + height)/(texture_size/16);
-                    face['uv'][3] = (face['uv'][3] + height)/(texture_size/16);
+                    face['uv'][1] = (face['uv'][1] * (frameTexture.height/16) + height) / (texture_size/16);
+                    face['uv'][3] = (face['uv'][3] * (frameTexture.height/16) + height) / (texture_size/16);
                     
-                    face['texture'] = 'texture';
+                    face['texture'] = '#texture';
                     
                     element['faces'][key] = face;
                 }
@@ -1109,11 +1448,19 @@ function createfiles() {
             mcmeta['animation']['frames'].push({'index': parseInt(c.getAttribute('data-index')),'time': parseInt(c.getAttribute('data-delay'))});
         }
         
-        output['model'] = JSON.stringify(model_json);
+        output['model'] = JSON.stringify(model_json, cleanJson, 4).replace(/\\"/g, '"').replace(/,/g, ', ').replace(/\}clean"/g, ' }').replace(/"clean\{/g, '{ ').replace(/\]clean"/g, ' ]').replace(/"clean\[/g, '[ ').replace(/"\:"/g, '": "').replace(/"\:\[/g, '": [').replace(/"east":/g,'"east": ').replace(/"west":/g,'"west": ').replace(/"down":/g,'"down": ').replace(/"up":/g,'"up":   ').replace(/"to":/g,'"to":  ').replace(/"rotation":/g,'"rotation": ');
         output['texture'] = canvas_workspace.toDataURL('image/png');
-        output['mcmeta'] = JSON.stringify(mcmeta);
+        output['mcmeta'] = JSON.stringify(mcmeta).replace(/\"animation\":/g,'\n    "animation": ').replace(/\"frames\":/g,'\n        "frames": ').replace(/\{\"index":/g,'\n            {"index": ').replace(/\"time\":/g,' "time": ').replace(/\]\}\}/g,'\n        ]\n    }\n}');
     }
-    
+}
+
+function cleanJson(key, value) {
+    var special = ['from', 'to', 'north', 'east', 'south', 'west', 'up', 'down', 'rotation', 'translation', 'scale', 'predicate', 'model'];
+    if (special.indexOf(key) >= 0) {
+        return 'clean' + JSON.stringify(value) + 'clean';
+    } else {
+        return value;
+    }
 }
 
 function loadLastTab() {
@@ -1125,23 +1472,28 @@ function loadLastTab() {
     pb.setAttribute('style', 'display: block');
     
     var outputmodel = document.querySelector('#downloadmodel a');
-    outputmodel.setAttribute('href','data:,' + output['model'])
-    outputmodel.setAttribute('download', model_replace + '.json')
+    outputmodel.setAttribute('href','data:,' + encodeURI(output['model']));
+    outputmodel.setAttribute('download', model_replace + '.json');
     document.getElementById('previewjson').innerHTML = output['model'];
     document.querySelector('#downloadmodel h4').innerHTML = model_replace + '.json';
     
     var outputtexture = document.querySelector('#downloadtexture a');
-    outputtexture.setAttribute('href',output['texture'])
-    outputtexture.setAttribute('download', model_name + '.png')
+    outputtexture.setAttribute('href',output['texture']);
+    outputtexture.setAttribute('download', model_name + '.png');
     var previewtexture = document.getElementById('previewtexture');
     previewtexture.setAttribute('src', output['texture']);
     document.querySelector('#downloadtexture h4').innerHTML = model_name + '.png';
     
     var outputmcmeta = document.querySelector('#downloadmcmeta a');
-    outputmcmeta.setAttribute('href','data:,' + output['mcmeta'])
-    outputmcmeta.setAttribute('download', model_name + '.png.mcmeta')
+    outputmcmeta.setAttribute('href','data:,' + encodeURI(output['mcmeta']));
+    outputmcmeta.setAttribute('download', model_name + '.png.mcmeta');
     document.getElementById('previewmcmeta').innerHTML = output['mcmeta'];
     document.querySelector('#downloadmcmeta h4').innerHTML = model_name + '.png.mcmeta';
+    
+    
+    document.getElementById("jsonmodelnameend").innerHTML = model_replace + '.json';
+    document.getElementById("texturenameend").innerHTML = model_name + '.png';
+    document.getElementById("mcmetanameend").innerHTML = model_name + '.png.mcmeta';
 }
 
 /*------------------------------------*\
@@ -1157,6 +1509,8 @@ function process() {
     document.getElementById('generatecover').className = 'covered';
     document.getElementById('outputscover').className = '';
     document.getElementById('timeline').setAttribute('style', 'display: inline-block;');
+    
+    mergeTextures()
     
     var framesList = generate();
     
@@ -1185,7 +1539,7 @@ function generated() {
     document.getElementById('generatecover').className = '';
     createfiles();
     
-    if (output['model']!=undefined && output['texture']!=undefined && output['mcmeta']!=undefined) {
+    if (animDuration > 0) {
         loadLastTab()
     } else {
         document.getElementById('log1').innerHTML = 'No frame loaded';
